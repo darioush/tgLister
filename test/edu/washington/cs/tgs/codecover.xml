@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?><TestSessionContainer xmlns="http://www.codecover.org/xml/testsession-container" Date="1430020008950" TestSessionContainerId="c0e5b067-1795-42c7-b560-002e9e40442e" version="1.0">
+<SrcFileList>
+<SrcFile Content="package zTest;&#10;&#10;public class InitializerClass4 {&#10;&#9;public int x = 10;&#10;&#9;public int y = 0;&#10;&#9;public int foo = y == 0 ? 0 : x / y;&#10;&#10;&#9;public int bar() {&#10;&#9;&#9;return foo;&#10;&#9;}&#10;&#9;&#10;&#9;public int multi() {&#10;&#9;&#9;int x = 10; int y = 40;&#10;&#9;&#9;try {&#10;&#9;&#9;&#9;int z = x + y; int t = z / (x - y/4); return t;&#10;&#9;&#9;} catch (ArithmeticException ex) {&#10;&#9;&#9;&#9;return 0;&#10;&#9;&#9;}&#10;&#9;}&#10;&#9;&#10;&#9;public int multi2() {&#10;&#9;&#9;int x = 10;&#10;&#9;&#9;int y = 30;&#10;&#9;&#9;if (x == 10 &amp;&amp;&#10;&#9;&#9;&#9;&#9;y == 20 &amp;&amp;&#10;&#9;&#9;&#9;&#9;(this.x == this.y)) {&#10;&#9;&#9;&#9;int g = (this.x &gt; this.y) ?  6 : 7; int r = (this.foo == 0) ? 0 : 4;&#10;&#9;&#9;&#9;return g + r;&#10;&#9;&#9;} else {&#10;&#9;&#9;&#9;return 1;&#10;&#9;&#9;}&#10;&#9;}&#10;&#9;&#10;&#9;public int switchMethod() {&#10;&#9;&#9;int x = 42;&#10;&#9;&#9;int y = 0;&#10;&#9;&#9;switch (x) {&#10;&#9;&#9;case 40:&#10;&#9;&#9;&#9;y = 5;&#10;&#9;&#9;case 42:&#10;&#9;&#9;&#9;y = 1;&#10;&#9;&#9;&#9;x = 4;&#10;&#9;&#9;}&#10;&#9;&#9;switch (x) {&#10;&#9;&#9;case 9:&#10;&#9;&#9;&#9;y = 4;&#10;&#9;&#9;default:&#10;&#9;&#9;&#9;x++;&#10;&#9;&#9;}&#10;&#9;&#9;return y;&#10;&#9;}&#10;}&#10;" Filename="InitializerClass4.java" Intrnl_Id="1"/>
+</SrcFileList>
+<CritList>
+<CritListEntry Name="org.codecover.model.utils.criteria.LoopCoverage" PluginName="org.codecover"/>
+<CritListEntry Name="org.codecover.model.utils.criteria.BranchCoverage" PluginName="org.codecover"/>
+<CritListEntry Name="org.codecover.model.utils.criteria.ConditionCoverage" PluginName="org.codecover"/>
+<CritListEntry Name="org.codecover.model.utils.criteria.SynchronizedStatementCoverage" PluginName="org.codecover"/>
+<CritListEntry Name="org.codecover.model.utils.criteria.QMOCoverage" PluginName="org.codecover"/>
+<CritListEntry Name="org.codecover.model.utils.criteria.StatementCoverage" PluginName="org.codecover"/>
+</CritList>
+<BoolOpList>
+<BoolOp Arity="2" Intrnl_Id="2" Name="conditional and (&amp;&amp;)">
+<BoolAssgnmntBoolMapList>
+<MapEntry BoolAssgnmnt="10" Value="false"/>
+<MapEntry BoolAssgnmnt="02" Value="false"/>
+<MapEntry BoolAssgnmnt="11" Value="true"/>
+</BoolAssgnmntBoolMapList>
+</BoolOp>
+</BoolOpList>
+<HierarchyLvlTypeList>
+<HierarchyLvlType EnglishName="package" IntrnlName="package" Intrnl_Id="3"/>
+<HierarchyLvlType EnglishName="class" IntrnlName="class" Intrnl_Id="4"/>
+<HierarchyLvlType EnglishName="method" IntrnlName="method" Intrnl_Id="5"/>
+<HierarchyLvlType EnglishName="default package" IntrnlName="default package" Intrnl_Id="6"/>
+</HierarchyLvlTypeList>
+<MASTRoot>
+<HierarchyLvl HierarchyLvlId="7" HierarchyLvlTypeId="6" Intrnl_Id="7" Name="default package">
+<Header/>
+<LocList/>
+<HierarchyLvl HierarchyLvlId="6" HierarchyLvlTypeId="3" Intrnl_Id="8" Name="zTest">
+<Header/>
+<LocList/>
+<HierarchyLvl HierarchyLvlId="5" HierarchyLvlTypeId="4" Intrnl_Id="9" Name="InitializerClass4">
+<Header>
+<Loc EndOffset="46" SrcFileId="1" StartOffset="16"/>
+</Header>
+<LocList>
+<Loc EndOffset="764" SrcFileId="1" StartOffset="16"/>
+</LocList>
+<StmntSeq Intrnl_Id="10">
+<LocList>
+<Loc EndOffset="68" SrcFileId="1" StartOffset="50"/>
+<Loc EndOffset="87" SrcFileId="1" StartOffset="70"/>
+<Loc EndOffset="125" SrcFileId="1" StartOffset="89"/>
+</LocList>
+<BasicStmnt CovItemId="S1" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="11">
+<LocList>
+<Loc EndOffset="68" SrcFileId="1" StartOffset="50"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S2" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="12">
+<LocList>
+<Loc EndOffset="87" SrcFileId="1" StartOffset="70"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S3" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="13">
+<LocList>
+<Loc EndOffset="125" SrcFileId="1" StartOffset="89"/>
+</LocList>
+<QMO CovItemId="Q0" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="14">
+<LocList>
+<Loc EndOffset="112" SrcFileId="1" StartOffset="106"/>
+</LocList>
+<QMO_E CovItemId="Q0-0" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="15">
+<LocList>
+<Loc EndOffset="116" SrcFileId="1" StartOffset="115"/>
+</LocList>
+</QMO_E>
+<QMO_E CovItemId="Q0-1" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="16">
+<LocList>
+<Loc EndOffset="124" SrcFileId="1" StartOffset="119"/>
+</LocList>
+</QMO_E>
+</QMO>
+</BasicStmnt>
+</StmntSeq>
+<HierarchyLvl HierarchyLvlId="1" HierarchyLvlTypeId="5" Intrnl_Id="17" Name="bar">
+<Header>
+<Loc EndOffset="144" SrcFileId="1" StartOffset="128"/>
+</Header>
+<LocList>
+<Loc EndOffset="163" SrcFileId="1" StartOffset="128"/>
+</LocList>
+<StmntSeq Intrnl_Id="18">
+<LocList>
+<Loc EndOffset="160" SrcFileId="1" StartOffset="149"/>
+</LocList>
+<BasicStmnt CovItemId="S4" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="19">
+<LocList>
+<Loc EndOffset="160" SrcFileId="1" StartOffset="149"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="2" HierarchyLvlTypeId="5" Intrnl_Id="20" Name="multi">
+<Header>
+<Loc EndOffset="185" SrcFileId="1" StartOffset="167"/>
+</Header>
+<LocList>
+<Loc EndOffset="329" SrcFileId="1" StartOffset="167"/>
+</LocList>
+<StmntSeq Intrnl_Id="21">
+<LocList>
+<Loc EndOffset="201" SrcFileId="1" StartOffset="190"/>
+<Loc EndOffset="213" SrcFileId="1" StartOffset="202"/>
+<Loc EndOffset="239" SrcFileId="1" StartOffset="225"/>
+<Loc EndOffset="262" SrcFileId="1" StartOffset="240"/>
+<Loc EndOffset="272" SrcFileId="1" StartOffset="263"/>
+<Loc EndOffset="326" SrcFileId="1" StartOffset="216"/>
+</LocList>
+<BasicStmnt CovItemId="S5" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="22">
+<LocList>
+<Loc EndOffset="201" SrcFileId="1" StartOffset="190"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S6" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="23">
+<LocList>
+<Loc EndOffset="213" SrcFileId="1" StartOffset="202"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S8" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="24">
+<LocList>
+<Loc EndOffset="239" SrcFileId="1" StartOffset="225"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S9" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="25">
+<LocList>
+<Loc EndOffset="262" SrcFileId="1" StartOffset="240"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S10" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="26">
+<LocList>
+<Loc EndOffset="272" SrcFileId="1" StartOffset="263"/>
+</LocList>
+</BasicStmnt>
+<CondStmnt CovItemId="S7" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="27">
+<Branch CovItemId="B1" CovItemPrefix="zTest.InitializerClass4.java" Implct="true" Intrnl_Id="28">
+<Cond/>
+<LocList/>
+<StmntSeq Intrnl_Id="29">
+<LocList/>
+</StmntSeq>
+</Branch>
+<Branch CovItemId="B2" CovItemPrefix="zTest.InitializerClass4.java" Implct="false" Intrnl_Id="30">
+<Cond>
+<Loc EndOffset="307" SrcFileId="1" StartOffset="277"/>
+</Cond>
+<LocList>
+<Loc EndOffset="326" SrcFileId="1" StartOffset="308"/>
+</LocList>
+<StmntSeq Intrnl_Id="31">
+<LocList>
+<Loc EndOffset="322" SrcFileId="1" StartOffset="313"/>
+</LocList>
+<BasicStmnt CovItemId="S11" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="32">
+<LocList>
+<Loc EndOffset="322" SrcFileId="1" StartOffset="313"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</Branch>
+<Keyword EndOffset="219" SrcFileId="1" StartOffset="216"/>
+<LocList>
+<Loc EndOffset="326" SrcFileId="1" StartOffset="216"/>
+</LocList>
+</CondStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="3" HierarchyLvlTypeId="5" Intrnl_Id="33" Name="multi2">
+<Header>
+<Loc EndOffset="352" SrcFileId="1" StartOffset="333"/>
+</Header>
+<LocList>
+<Loc EndOffset="560" SrcFileId="1" StartOffset="333"/>
+</LocList>
+<StmntSeq Intrnl_Id="34">
+<LocList>
+<Loc EndOffset="368" SrcFileId="1" StartOffset="357"/>
+<Loc EndOffset="382" SrcFileId="1" StartOffset="371"/>
+<Loc EndOffset="557" SrcFileId="1" StartOffset="385"/>
+</LocList>
+<BasicStmnt CovItemId="S12" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="35">
+<LocList>
+<Loc EndOffset="368" SrcFileId="1" StartOffset="357"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S13" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="36">
+<LocList>
+<Loc EndOffset="382" SrcFileId="1" StartOffset="371"/>
+</LocList>
+</BasicStmnt>
+<CondStmnt CovItemId="S14" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="37">
+<Branch CovItemId="B3" CovItemPrefix="zTest.InitializerClass4.java" Implct="false" Intrnl_Id="38">
+<Cond/>
+<LocList>
+<Loc EndOffset="533" SrcFileId="1" StartOffset="439"/>
+</LocList>
+<StmntSeq Intrnl_Id="39">
+<LocList>
+<Loc EndOffset="479" SrcFileId="1" StartOffset="444"/>
+<Loc EndOffset="512" SrcFileId="1" StartOffset="480"/>
+<Loc EndOffset="529" SrcFileId="1" StartOffset="516"/>
+</LocList>
+<BasicStmnt CovItemId="S15" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="40">
+<LocList>
+<Loc EndOffset="479" SrcFileId="1" StartOffset="444"/>
+</LocList>
+<QMO CovItemId="Q1" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="41">
+<LocList>
+<Loc EndOffset="469" SrcFileId="1" StartOffset="452"/>
+</LocList>
+<QMO_E CovItemId="Q1-0" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="42">
+<LocList>
+<Loc EndOffset="474" SrcFileId="1" StartOffset="473"/>
+</LocList>
+</QMO_E>
+<QMO_E CovItemId="Q1-1" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="43">
+<LocList>
+<Loc EndOffset="478" SrcFileId="1" StartOffset="477"/>
+</LocList>
+</QMO_E>
+</QMO>
+</BasicStmnt>
+<BasicStmnt CovItemId="S16" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="44">
+<LocList>
+<Loc EndOffset="512" SrcFileId="1" StartOffset="480"/>
+</LocList>
+<QMO CovItemId="Q2" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="45">
+<LocList>
+<Loc EndOffset="503" SrcFileId="1" StartOffset="488"/>
+</LocList>
+<QMO_E CovItemId="Q2-0" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="46">
+<LocList>
+<Loc EndOffset="507" SrcFileId="1" StartOffset="506"/>
+</LocList>
+</QMO_E>
+<QMO_E CovItemId="Q2-1" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="47">
+<LocList>
+<Loc EndOffset="511" SrcFileId="1" StartOffset="510"/>
+</LocList>
+</QMO_E>
+</QMO>
+</BasicStmnt>
+<BasicStmnt CovItemId="S17" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="48">
+<LocList>
+<Loc EndOffset="529" SrcFileId="1" StartOffset="516"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</Branch>
+<Branch CovItemId="B4" CovItemPrefix="zTest.InitializerClass4.java" Implct="false" Intrnl_Id="49">
+<Cond>
+<Loc EndOffset="538" SrcFileId="1" StartOffset="534"/>
+</Cond>
+<LocList>
+<Loc EndOffset="557" SrcFileId="1" StartOffset="539"/>
+</LocList>
+<StmntSeq Intrnl_Id="50">
+<LocList>
+<Loc EndOffset="553" SrcFileId="1" StartOffset="544"/>
+</LocList>
+<BasicStmnt CovItemId="S18" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="51">
+<LocList>
+<Loc EndOffset="553" SrcFileId="1" StartOffset="544"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</Branch>
+<Keyword EndOffset="387" SrcFileId="1" StartOffset="385"/>
+<LocList>
+<Loc EndOffset="557" SrcFileId="1" StartOffset="385"/>
+</LocList>
+<RootTerm CovItemId="C1" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="52">
+<OpTerm BooleanOpId="2" Intrnl_Id="53">
+<OpTerm BooleanOpId="2" Intrnl_Id="54">
+<BasicBoolTerm Intrnl_Id="55">
+<LocList>
+<Loc EndOffset="396" SrcFileId="1" StartOffset="389"/>
+</LocList>
+</BasicBoolTerm>
+<BasicBoolTerm Intrnl_Id="56">
+<LocList>
+<Loc EndOffset="411" SrcFileId="1" StartOffset="404"/>
+</LocList>
+</BasicBoolTerm>
+<LocList>
+<Loc EndOffset="399" SrcFileId="1" StartOffset="397"/>
+</LocList>
+</OpTerm>
+<BasicBoolTerm Intrnl_Id="57">
+<LocList>
+<Loc EndOffset="436" SrcFileId="1" StartOffset="420"/>
+</LocList>
+</BasicBoolTerm>
+<LocList>
+<Loc EndOffset="414" SrcFileId="1" StartOffset="412"/>
+</LocList>
+</OpTerm>
+</RootTerm>
+</CondStmnt>
+</StmntSeq>
+</HierarchyLvl>
+<HierarchyLvl HierarchyLvlId="4" HierarchyLvlTypeId="5" Intrnl_Id="58" Name="switchMethod">
+<Header>
+<Loc EndOffset="589" SrcFileId="1" StartOffset="564"/>
+</Header>
+<LocList>
+<Loc EndOffset="762" SrcFileId="1" StartOffset="564"/>
+</LocList>
+<StmntSeq Intrnl_Id="59">
+<LocList>
+<Loc EndOffset="605" SrcFileId="1" StartOffset="594"/>
+<Loc EndOffset="618" SrcFileId="1" StartOffset="608"/>
+<Loc EndOffset="689" SrcFileId="1" StartOffset="621"/>
+<Loc EndOffset="747" SrcFileId="1" StartOffset="692"/>
+<Loc EndOffset="759" SrcFileId="1" StartOffset="750"/>
+</LocList>
+<BasicStmnt CovItemId="S19" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="60">
+<LocList>
+<Loc EndOffset="605" SrcFileId="1" StartOffset="594"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S20" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="61">
+<LocList>
+<Loc EndOffset="618" SrcFileId="1" StartOffset="608"/>
+</LocList>
+</BasicStmnt>
+<CondStmnt CovItemId="S21" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="62">
+<Branch CovItemId="B5" CovItemPrefix="zTest.InitializerClass4.java" Implct="false" Intrnl_Id="63">
+<Cond>
+<Loc EndOffset="643" SrcFileId="1" StartOffset="636"/>
+</Cond>
+<LocList>
+<Loc EndOffset="654" SrcFileId="1" StartOffset="648"/>
+</LocList>
+<StmntSeq Intrnl_Id="64">
+<LocList>
+<Loc EndOffset="654" SrcFileId="1" StartOffset="648"/>
+</LocList>
+<BasicStmnt CovItemId="S22" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="65">
+<LocList>
+<Loc EndOffset="654" SrcFileId="1" StartOffset="648"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</Branch>
+<Branch CovItemId="B6" CovItemPrefix="zTest.InitializerClass4.java" Implct="false" Intrnl_Id="66">
+<Cond>
+<Loc EndOffset="664" SrcFileId="1" StartOffset="657"/>
+</Cond>
+<LocList>
+<Loc EndOffset="685" SrcFileId="1" StartOffset="669"/>
+</LocList>
+<StmntSeq Intrnl_Id="67">
+<LocList>
+<Loc EndOffset="675" SrcFileId="1" StartOffset="669"/>
+<Loc EndOffset="685" SrcFileId="1" StartOffset="679"/>
+</LocList>
+<BasicStmnt CovItemId="S23" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="68">
+<LocList>
+<Loc EndOffset="675" SrcFileId="1" StartOffset="669"/>
+</LocList>
+</BasicStmnt>
+<BasicStmnt CovItemId="S24" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="69">
+<LocList>
+<Loc EndOffset="685" SrcFileId="1" StartOffset="679"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</Branch>
+<Branch CovItemId="B7" CovItemPrefix="zTest.InitializerClass4.java" Implct="true" Intrnl_Id="70">
+<Cond/>
+<LocList/>
+<StmntSeq Intrnl_Id="71">
+<LocList/>
+</StmntSeq>
+</Branch>
+<Keyword EndOffset="627" SrcFileId="1" StartOffset="621"/>
+<LocList>
+<Loc EndOffset="689" SrcFileId="1" StartOffset="621"/>
+</LocList>
+</CondStmnt>
+<CondStmnt CovItemId="S25" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="72">
+<Branch CovItemId="B8" CovItemPrefix="zTest.InitializerClass4.java" Implct="false" Intrnl_Id="73">
+<Cond>
+<Loc EndOffset="713" SrcFileId="1" StartOffset="707"/>
+</Cond>
+<LocList>
+<Loc EndOffset="724" SrcFileId="1" StartOffset="718"/>
+</LocList>
+<StmntSeq Intrnl_Id="74">
+<LocList>
+<Loc EndOffset="724" SrcFileId="1" StartOffset="718"/>
+</LocList>
+<BasicStmnt CovItemId="S26" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="75">
+<LocList>
+<Loc EndOffset="724" SrcFileId="1" StartOffset="718"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</Branch>
+<Branch CovItemId="B9" CovItemPrefix="zTest.InitializerClass4.java" Implct="false" Intrnl_Id="76">
+<Cond>
+<Loc EndOffset="734" SrcFileId="1" StartOffset="727"/>
+</Cond>
+<LocList>
+<Loc EndOffset="743" SrcFileId="1" StartOffset="739"/>
+</LocList>
+<StmntSeq Intrnl_Id="77">
+<LocList>
+<Loc EndOffset="743" SrcFileId="1" StartOffset="739"/>
+</LocList>
+<BasicStmnt CovItemId="S27" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="78">
+<LocList>
+<Loc EndOffset="743" SrcFileId="1" StartOffset="739"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</Branch>
+<Keyword EndOffset="698" SrcFileId="1" StartOffset="692"/>
+<LocList>
+<Loc EndOffset="747" SrcFileId="1" StartOffset="692"/>
+</LocList>
+</CondStmnt>
+<BasicStmnt CovItemId="S28" CovItemPrefix="zTest.InitializerClass4.java" Intrnl_Id="79">
+<LocList>
+<Loc EndOffset="759" SrcFileId="1" StartOffset="750"/>
+</LocList>
+</BasicStmnt>
+</StmntSeq>
+</HierarchyLvl>
+</HierarchyLvl>
+</HierarchyLvl>
+</HierarchyLvl>
+</MASTRoot>
+<TestSession Comment="" Date="1430020012791" Name="merged-session">
+<TestCase Comment="This is a test case containing all coverage results cause no startTestCase methods where captured." Date="1430020010798" Name="UNNAMED TESTCASE">
+<CovList>
+<CovPrefix CovItemPrefix="zTest.InitializerClass4.java">
+<Cov CovItemId="B2" Value="1"/>
+<Cov CovItemId="B4" Value="1"/>
+<Cov CovItemId="B6" Value="1"/>
+<Cov CovItemId="B7" Value="1"/>
+<Cov CovItemId="B9" Value="1"/>
+<Cov CovItemId="Q0-0" Value="4"/>
+<Cov CovItemId="S1" Value="4"/>
+<Cov CovItemId="S11" Value="1"/>
+<Cov CovItemId="S12" Value="1"/>
+<Cov CovItemId="S13" Value="1"/>
+<Cov CovItemId="S14" Value="1"/>
+<Cov CovItemId="S18" Value="1"/>
+<Cov CovItemId="S19" Value="1"/>
+<Cov CovItemId="S2" Value="4"/>
+<Cov CovItemId="S20" Value="1"/>
+<Cov CovItemId="S21" Value="1"/>
+<Cov CovItemId="S23" Value="1"/>
+<Cov CovItemId="S24" Value="1"/>
+<Cov CovItemId="S25" Value="1"/>
+<Cov CovItemId="S27" Value="1"/>
+<Cov CovItemId="S28" Value="1"/>
+<Cov CovItemId="S3" Value="4"/>
+<Cov CovItemId="S4" Value="1"/>
+<Cov CovItemId="S5" Value="1"/>
+<Cov CovItemId="S6" Value="1"/>
+<Cov CovItemId="S7" Value="1"/>
+<Cov CovItemId="S8" Value="1"/>
+<Cov CovItemId="S9" Value="1"/>
+</CovPrefix>
+</CovList>
+<AssgnmntList>
+<AssgnmntPrefix RootTermCovItemPrefix="zTest.InitializerClass4.java">
+<AssgnmntListEntry Length="3" RootTermCovItemId="C1">
+<MapEntry BoolAssgnmnt="102" Value="1"/>
+</AssgnmntListEntry>
+</AssgnmntPrefix>
+</AssgnmntList>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<TestCase Comment="Empty test case" Date="1421193188305" Name="EMPTY_TEST_CASE">
+<CovList/>
+<AssgnmntList/>
+<ObjMetaDataList/>
+<MetaDataList/>
+</TestCase>
+<MetaDataList/>
+</TestSession>
+</TestSessionContainer>

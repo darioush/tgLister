@@ -1,0 +1,99 @@
+1:LVR:POS:0:zTest.InitializerClass4:4:10 |==> 0
+2:LVR:POS:NEG:zTest.InitializerClass4:4:10 |==> -10
+3:LVR:0:POS:zTest.InitializerClass4:5:0 |==> 1
+4:LVR:0:NEG:zTest.InitializerClass4:5:0 |==> -1
+5:LVR:0:POS:zTest.InitializerClass4:6:0 |==> 1
+6:LVR:0:NEG:zTest.InitializerClass4:6:0 |==> -1
+7:ROR:==(int,int):<=(int,int):zTest.InitializerClass4:6:y == 0 |==> y <= 0
+8:ROR:==(int,int):>=(int,int):zTest.InitializerClass4:6:y == 0 |==> y >= 0
+9:ROR:==(int,int):FALSE(int,int):zTest.InitializerClass4:6:y == 0 |==> false
+10:LVR:0:POS:zTest.InitializerClass4:6:0 |==> 1
+11:LVR:0:NEG:zTest.InitializerClass4:6:0 |==> -1
+12:AOR:/(int,int):%(int,int):zTest.InitializerClass4:6:x / y |==> x % y
+13:AOR:/(int,int):*(int,int):zTest.InitializerClass4:6:x / y |==> x * y
+14:AOR:/(int,int):+(int,int):zTest.InitializerClass4:6:x / y |==> x + y
+15:AOR:/(int,int):-(int,int):zTest.InitializerClass4:6:x / y |==> x - y
+16:LVR:POS:0:zTest.InitializerClass4@multi:13:10 |==> 0
+17:LVR:POS:NEG:zTest.InitializerClass4@multi:13:10 |==> -10
+18:LVR:POS:0:zTest.InitializerClass4@multi:13:40 |==> 0
+19:LVR:POS:NEG:zTest.InitializerClass4@multi:13:40 |==> -40
+20:AOR:+(int,int):%(int,int):zTest.InitializerClass4@multi:15:x + y |==> x % y
+21:AOR:+(int,int):*(int,int):zTest.InitializerClass4@multi:15:x + y |==> x * y
+22:AOR:+(int,int):-(int,int):zTest.InitializerClass4@multi:15:x + y |==> x - y
+23:AOR:+(int,int):/(int,int):zTest.InitializerClass4@multi:15:x + y |==> x / y
+24:LVR:POS:0:zTest.InitializerClass4@multi:15:4 |==> 0
+25:LVR:POS:NEG:zTest.InitializerClass4@multi:15:4 |==> -4
+26:AOR:/(int,int):%(int,int):zTest.InitializerClass4@multi:15:y / 4 |==> y % 4
+27:AOR:/(int,int):*(int,int):zTest.InitializerClass4@multi:15:y / 4 |==> y * 4
+28:AOR:/(int,int):+(int,int):zTest.InitializerClass4@multi:15:y / 4 |==> y + 4
+29:AOR:/(int,int):-(int,int):zTest.InitializerClass4@multi:15:y / 4 |==> y - 4
+30:AOR:-(int,int):%(int,int):zTest.InitializerClass4@multi:15:x - y / 4 |==> x % (y / 4)
+31:AOR:-(int,int):*(int,int):zTest.InitializerClass4@multi:15:x - y / 4 |==> x * (y / 4)
+32:AOR:-(int,int):+(int,int):zTest.InitializerClass4@multi:15:x - y / 4 |==> x + y / 4
+33:AOR:-(int,int):/(int,int):zTest.InitializerClass4@multi:15:x - y / 4 |==> x / (y / 4)
+34:AOR:/(int,int):%(int,int):zTest.InitializerClass4@multi:15:z / (x - y / 4) |==> z % (x - y / 4)
+35:AOR:/(int,int):*(int,int):zTest.InitializerClass4@multi:15:z / (x - y / 4) |==> z * (x - y / 4)
+36:AOR:/(int,int):+(int,int):zTest.InitializerClass4@multi:15:z / (x - y / 4) |==> z + (x - y / 4)
+37:AOR:/(int,int):-(int,int):zTest.InitializerClass4@multi:15:z / (x - y / 4) |==> z - (x - y / 4)
+38:LVR:0:POS:zTest.InitializerClass4@multi:17:0 |==> 1
+39:LVR:0:NEG:zTest.InitializerClass4@multi:17:0 |==> -1
+40:LVR:POS:0:zTest.InitializerClass4@multi2:22:10 |==> 0
+41:LVR:POS:NEG:zTest.InitializerClass4@multi2:22:10 |==> -10
+42:LVR:POS:0:zTest.InitializerClass4@multi2:23:20 |==> 0
+43:LVR:POS:NEG:zTest.InitializerClass4@multi2:23:20 |==> -20
+44:LVR:POS:0:zTest.InitializerClass4@multi2:24:10 |==> 0
+45:LVR:POS:NEG:zTest.InitializerClass4@multi2:24:10 |==> -10
+46:ROR:==(int,int):<=(int,int):zTest.InitializerClass4@multi2:24:x == 10 |==> x <= 10
+47:ROR:==(int,int):>=(int,int):zTest.InitializerClass4@multi2:24:x == 10 |==> x >= 10
+48:ROR:==(int,int):FALSE(int,int):zTest.InitializerClass4@multi2:24:x == 10 |==> false
+49:LVR:POS:0:zTest.InitializerClass4@multi2:25:20 |==> 0
+50:LVR:POS:NEG:zTest.InitializerClass4@multi2:25:20 |==> -20
+51:ROR:==(int,int):<=(int,int):zTest.InitializerClass4@multi2:25:y == 20 |==> y <= 20
+52:ROR:==(int,int):>=(int,int):zTest.InitializerClass4@multi2:25:y == 20 |==> y >= 20
+53:ROR:==(int,int):FALSE(int,int):zTest.InitializerClass4@multi2:25:y == 20 |==> false
+54:COR:&&(boolean,boolean):==(boolean,boolean):zTest.InitializerClass4@multi2:24:x == 10 && y == 20 |==> x == 10 == (y == 20)
+55:COR:&&(boolean,boolean):FALSE(boolean,boolean):zTest.InitializerClass4@multi2:24:x == 10 && y == 20 |==> false
+56:COR:&&(boolean,boolean):LHS(boolean,boolean):zTest.InitializerClass4@multi2:24:x == 10 && y == 20 |==> x == 10
+57:COR:&&(boolean,boolean):RHS(boolean,boolean):zTest.InitializerClass4@multi2:25:x == 10 && y == 20 |==> y == 20
+58:ROR:==(int,int):<=(int,int):zTest.InitializerClass4@multi2:26:this.x == this.y |==> this.x <= this.y
+59:ROR:==(int,int):>=(int,int):zTest.InitializerClass4@multi2:26:this.x == this.y |==> this.x >= this.y
+60:ROR:==(int,int):FALSE(int,int):zTest.InitializerClass4@multi2:26:this.x == this.y |==> false
+61:COR:&&(boolean,boolean):==(boolean,boolean):zTest.InitializerClass4@multi2:24:x == 10 && y == 20 && (this.x == this.y) |==> (x == 10 && y == 20) == (this.x == this.y)
+62:COR:&&(boolean,boolean):FALSE(boolean,boolean):zTest.InitializerClass4@multi2:25:x == 10 && y == 20 && (this.x == this.y) |==> false
+63:COR:&&(boolean,boolean):LHS(boolean,boolean):zTest.InitializerClass4@multi2:24:x == 10 && y == 20 && (this.x == this.y) |==> x == 10 && y == 20
+64:COR:&&(boolean,boolean):RHS(boolean,boolean):zTest.InitializerClass4@multi2:26:x == 10 && y == 20 && (this.x == this.y) |==> (this.x == this.y)
+65:ROR:>(int,int):!=(int,int):zTest.InitializerClass4@multi2:27:this.x > this.y |==> this.x != this.y
+66:ROR:>(int,int):>=(int,int):zTest.InitializerClass4@multi2:27:this.x > this.y |==> this.x >= this.y
+67:ROR:>(int,int):FALSE(int,int):zTest.InitializerClass4@multi2:27:this.x > this.y |==> false
+68:LVR:POS:0:zTest.InitializerClass4@multi2:27:6 |==> 0
+69:LVR:POS:NEG:zTest.InitializerClass4@multi2:27:6 |==> -6
+70:LVR:POS:0:zTest.InitializerClass4@multi2:27:7 |==> 0
+71:LVR:POS:NEG:zTest.InitializerClass4@multi2:27:7 |==> -7
+72:LVR:0:POS:zTest.InitializerClass4@multi2:27:0 |==> 1
+73:LVR:0:NEG:zTest.InitializerClass4@multi2:27:0 |==> -1
+74:ROR:==(int,int):<=(int,int):zTest.InitializerClass4@multi2:27:this.foo == 0 |==> this.foo <= 0
+75:ROR:==(int,int):>=(int,int):zTest.InitializerClass4@multi2:27:this.foo == 0 |==> this.foo >= 0
+76:ROR:==(int,int):FALSE(int,int):zTest.InitializerClass4@multi2:27:this.foo == 0 |==> false
+77:LVR:0:POS:zTest.InitializerClass4@multi2:27:0 |==> 1
+78:LVR:0:NEG:zTest.InitializerClass4@multi2:27:0 |==> -1
+79:LVR:POS:0:zTest.InitializerClass4@multi2:27:4 |==> 0
+80:LVR:POS:NEG:zTest.InitializerClass4@multi2:27:4 |==> -4
+81:AOR:+(int,int):%(int,int):zTest.InitializerClass4@multi2:28:g + r |==> g % r
+82:AOR:+(int,int):*(int,int):zTest.InitializerClass4@multi2:28:g + r |==> g * r
+83:AOR:+(int,int):-(int,int):zTest.InitializerClass4@multi2:28:g + r |==> g - r
+84:AOR:+(int,int):/(int,int):zTest.InitializerClass4@multi2:28:g + r |==> g / r
+85:LVR:POS:0:zTest.InitializerClass4@multi2:30:1 |==> 0
+86:LVR:POS:NEG:zTest.InitializerClass4@multi2:30:1 |==> -1
+87:LVR:POS:0:zTest.InitializerClass4@switchMethod:35:42 |==> 0
+88:LVR:POS:NEG:zTest.InitializerClass4@switchMethod:35:42 |==> -42
+89:LVR:0:POS:zTest.InitializerClass4@switchMethod:36:0 |==> 1
+90:LVR:0:NEG:zTest.InitializerClass4@switchMethod:36:0 |==> -1
+91:LVR:POS:0:zTest.InitializerClass4@switchMethod:39:5 |==> 0
+92:LVR:POS:NEG:zTest.InitializerClass4@switchMethod:39:5 |==> -5
+93:LVR:POS:0:zTest.InitializerClass4@switchMethod:41:1 |==> 0
+94:LVR:POS:NEG:zTest.InitializerClass4@switchMethod:41:1 |==> -1
+95:LVR:POS:0:zTest.InitializerClass4@switchMethod:42:4 |==> 0
+96:LVR:POS:NEG:zTest.InitializerClass4@switchMethod:42:4 |==> -4
+97:LVR:POS:0:zTest.InitializerClass4@switchMethod:46:4 |==> 0
+98:LVR:POS:NEG:zTest.InitializerClass4@switchMethod:46:4 |==> -4
+99:STD:<INC/DEC>:<NO-OP>:zTest.InitializerClass4@switchMethod:48:x++ |==> <NO-OP>
