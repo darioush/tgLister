@@ -9,6 +9,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -129,31 +130,34 @@ public class JmockitTgPrinter {
 
 				for (Entry<Node, ArrayList<Node>> entry : joins.entrySet()) {
 					Node jmpDst = entry.getKey();
-					List<Node> srcs = entry.getValue();
+					List<Node> unsplitsrcs = entry.getValue();
 
-					LinkedHashMap<List<Node>, Tg> pathsToTgs = new LinkedHashMap<List<Node>, Tg>();
-					Node first = srcs.get(0);
-					Tg jumped = new Tg(fn, first.line, first.getSegment(),
-					// below is in for MultiForks
-							idxer.next(new Pair<Integer, Integer>(first.line,
-									first.getSegment())), "branch", "jmockit");
-					// below does not apply to MultiForks
-					Tg notJumped = new Tg(fn, first.line, first.getSegment(),
-							1, "branch", "jmockit");
-
-					// 'jumped' tg happens if 'any' of the jumps are taken:
-					for (Node src : srcs) {
-						pathsToTgs.put(Arrays.asList(src, jmpDst), jumped);
-					}
-					for (List<Node> notJumpedPath : getAdditionalPathList(srcs)) {
-						pathsToTgs.put(notJumpedPath, notJumped);
-					}
-					for (List<Node> path : pathsToTgs.keySet()) {
-						Tg goal = pathsToTgs.get(path);
-						allTgs.add(goal);
-						List<Path> paths = method.getPaths();
-						if (isInCoveredPaths(path, paths)) {
-							covered.add(goal);
+					for (List<Node> srcs : splitBasedOnSimpleForkChains(unsplitsrcs)) {
+						
+						LinkedHashMap<List<Node>, Tg> pathsToTgs = new LinkedHashMap<List<Node>, Tg>();
+						Node first = srcs.get(0);
+						Tg jumped = new Tg(fn, first.line, first.getSegment(),
+						// below is in for MultiForks
+								idxer.next(new Pair<Integer, Integer>(first.line,
+										first.getSegment())), "branch", "jmockit");
+						// below does not apply to MultiForks
+						Tg notJumped = new Tg(fn, first.line, first.getSegment(),
+								1, "branch", "jmockit");
+	
+						// 'jumped' tg happens if 'any' of the jumps are taken:
+						for (Node src : srcs) {
+							pathsToTgs.put(Arrays.asList(src, jmpDst), jumped);
+						}
+						for (List<Node> notJumpedPath : getAdditionalPathList(srcs)) {
+							pathsToTgs.put(notJumpedPath, notJumped);
+						}
+						for (List<Node> path : pathsToTgs.keySet()) {
+							Tg goal = pathsToTgs.get(path);
+							allTgs.add(goal);
+							List<Path> paths = method.getPaths();
+							if (isInCoveredPaths(path, paths)) {
+								covered.add(goal);
+							}
 						}
 					}
 				}
@@ -185,40 +189,43 @@ public class JmockitTgPrinter {
 
 				for (Entry<Node, ArrayList<Node>> entry : joins.entrySet()) {
 					Node jmpDst = entry.getKey();
-					List<Node> srcs = entry.getValue();
-					// don't need cases
-					if (isMultiFork(srcs.get(0))) {
-						continue;
-					}
-
-					LinkedHashMap<List<Node>, Tg> pathsToTgs = new LinkedHashMap<List<Node>, Tg>();
-					// each term gets two goals:
-					int srcCounter = 0;
-					for (Node src : srcs) {
-						Tg jumped = new Tg(fn, 
-								src.line, src.getSegment(),
-								idxer.next(new Pair<Integer, Integer>(src.line, src.getSegment())), 
-								"term", "jmockit");
-						
-						pathsToTgs.put(Arrays.asList(src, jmpDst), jumped);
-						for (List<Node> notJumpedPath : 
-								getAdditionalPathList(srcs.subList(0, srcCounter + 1))) {
-							Tg notJumped = new Tg(fn,
+					List<Node> unsplitsrcs = entry.getValue();
+					
+					for (List<Node> srcs: splitBasedOnSimpleForkChains(unsplitsrcs)) {
+						// don't need cases
+						if (isMultiFork(srcs.get(0))) {
+							continue;
+						}
+	
+						LinkedHashMap<List<Node>, Tg> pathsToTgs = new LinkedHashMap<List<Node>, Tg>();
+						// each term gets two goals:
+						int srcCounter = 0;
+						for (Node src : srcs) {
+							Tg jumped = new Tg(fn, 
 									src.line, src.getSegment(),
-									idxer.next(new Pair<Integer, Integer>(src.line, src.getSegment()))
-									, "term", "jmockit");
-							pathsToTgs.put(notJumpedPath, notJumped);
+									idxer.next(new Pair<Integer, Integer>(src.line, src.getSegment())), 
+									"term", "jmockit");
+							
+							pathsToTgs.put(Arrays.asList(src, jmpDst), jumped);
+							for (List<Node> notJumpedPath : 
+									getAdditionalPathList(srcs.subList(0, srcCounter + 1))) {
+								Tg notJumped = new Tg(fn,
+										src.line, src.getSegment(),
+										idxer.next(new Pair<Integer, Integer>(src.line, src.getSegment()))
+										, "term", "jmockit");
+								pathsToTgs.put(notJumpedPath, notJumped);
+							}
+							
+							++srcCounter;
 						}
 						
-						++srcCounter;
-					}
-					
-					for (List<Node> path : pathsToTgs.keySet()) {
-						Tg goal = pathsToTgs.get(path);
-						allTgs.add(goal);
-						List<Path> paths = method.getPaths();
-						if (isInCoveredPaths(path, paths)) {
-							covered.add(goal);
+						for (List<Node> path : pathsToTgs.keySet()) {
+							Tg goal = pathsToTgs.get(path);
+							allTgs.add(goal);
+							List<Path> paths = method.getPaths();
+							if (isInCoveredPaths(path, paths)) {
+								covered.add(goal);
+							}
 						}
 					}
 				}
@@ -294,6 +301,35 @@ public class JmockitTgPrinter {
 		return false;
 	}
 
+	private List<List<Node>> splitBasedOnSimpleForkChains(List<Node> srcs) {
+		LinkedList<List<Node>> result = new LinkedList<List<Node>>();
+		LinkedList<Node> curList = new LinkedList<Node>();
+		for (Node src: srcs) {
+			if (!curList.isEmpty()) {
+				// can we append this?
+				if (isSimpleFork(curList.getLast()) &&
+						getNextNode(Utils.<Node>getPrivate(curList.getLast(), "nextConsecutiveNode")) == src) {
+					// yes, we can append it
+				} else {
+					// we cannot append it.. is an independent jump
+					if (isSimpleFork(curList.getLast())) {
+						Node nextConsecutiveForNonMergable = getNextNode(Utils.<Node>getPrivate(curList.getLast(), "nextConsecutiveNode"));
+						if (nextConsecutiveForNonMergable.line == src.line) {
+							System.err.println(curList.getLast() + " :: " + nextConsecutiveForNonMergable);
+							System.err.println(src + "::");
+							throw new RuntimeException("this sanity check failed");
+						}
+					}
+					result.add(curList);
+					curList = new LinkedList<Node>();
+				}
+			}
+			curList.add(src);
+		}
+		result.add(curList);
+		return result;
+	}
+	
 	private List<List<Node>> getAdditionalPathList(List<Node> srcs) {
 		boolean allSimpleFork = true;
 		for (int i = 0; i < srcs.size(); ++i) {
@@ -302,11 +338,14 @@ public class JmockitTgPrinter {
 				allSimpleFork = false;
 				break;
 			}
+
 			if (i < srcs.size() - 1) {
 				Node next = srcs.get(i + 1);
 				Node expectedNext = getNextNode(Utils.<Node> getPrivate(n,
 						"nextConsecutiveNode"));
 				if (next != expectedNext) {
+					System.out.println(next);
+					System.out.println(expectedNext);
 					throw new RuntimeException();
 				}
 			}

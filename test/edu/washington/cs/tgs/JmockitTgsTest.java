@@ -26,7 +26,7 @@ public class JmockitTgsTest {
 	}
 
 	
-	//@Test
+	@Test
 	public void testBranch() {
 		URL in = this.getClass().getResource("coverage.ser");
 		File f = new File(in.getFile());
